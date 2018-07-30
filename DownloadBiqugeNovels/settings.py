@@ -14,6 +14,7 @@ BOT_NAME = 'DownloadBiqugeNovels'
 SPIDER_MODULES = ['DownloadBiqugeNovels.spiders']
 NEWSPIDER_MODULE = 'DownloadBiqugeNovels.spiders'
 
+#随机获得user_agent
 USER_AGENT_LIST = ['zspider/0.9-dev http://feedback.redkolibri.com/',
                     'Xaldon_WebSpider/2.0.b1',
                     'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) Speedy Spider (http://www.entireweb.com/about/search_tech/speedy_spider/)',
@@ -49,6 +50,7 @@ USER_AGENT_LIST = ['zspider/0.9-dev http://feedback.redkolibri.com/',
  
 USER_AGENT = random.choice(USER_AGENT_LIST)
 
+#初始化pipeline
 ITEM_PIPELINES = {
     #'tutorial.pipelines.TextPipeline': 300,
     'DownloadBiqugeNovels.pipelines.MongoPipeline': 400,

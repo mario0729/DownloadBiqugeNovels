@@ -14,9 +14,9 @@ class MongoPipeline(object):
     def process_item(self, item, spider):
         client = pymongo .MongoClient(host='localhost',port=27017)
         db = client.BiqugeNovels
-        #print('#######################################################################')
-        #print(item['bookname'])
-        collection = db[item['author']+'_'+item['bookname']]  #根据书名来创建表名
+        #根据书名来创建表名，用collection=db[变量]来创建
+        collection = db[item['author']+'_'+item['bookname']]  
         bookinfo = dict(item)
+        #将item写入表中
         collection.insert(bookinfo)
         return item
