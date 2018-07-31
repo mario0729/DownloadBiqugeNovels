@@ -21,5 +21,6 @@ class BookinfoItem(scrapy.Item):
     chapter_name = scrapy.Field()
     #章节内容
     content = scrapy.Field()
-    
+    #章节数
+    Max_chapters = scrapy.Field()
     
